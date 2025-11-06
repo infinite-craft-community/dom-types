@@ -1,4 +1,4 @@
-import type { IC_Container_VUE, IC_Sidebar_VUE } from "./vue";
+import type { IC_VUE } from "./vue";
 
 export namespace IC_DOM {
   interface BodyElement extends HTMLBodyElement {
@@ -22,14 +22,14 @@ export namespace IC_DOM {
   }
 
   interface ContainerDivElement extends HTMLDivElement {
-    readonly __vue__: IC_Container_VUE;
+    readonly __vue__: IC_VUE.Container;
     readonly parentElement: Container_WrapperDivElement;
     readonly parentNode: Container_WrapperDivElement;
   }
 
   namespace Container {
     interface SidebarDivElement extends HTMLBodyElement {
-      readonly __vue__: IC_Sidebar_VUE;
+      readonly __vue__: IC_VUE.Sidebar;
       readonly parentElement: ContainerDivElement;
       readonly parentNode: ContainerDivElement;
     }

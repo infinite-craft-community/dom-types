@@ -1,6 +1,6 @@
 {
   "name": "@infinite-craft/dom-types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript type declarations for the Infinite Craft DOM tree and client API",
   "type": "module",
   "author": "GameRoMan",

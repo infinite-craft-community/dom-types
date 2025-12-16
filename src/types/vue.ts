@@ -57,7 +57,7 @@ export namespace IC_VUE {
     setLoading(): void;
     setLoadingMessage(message: string): void;
     setSelectedInstance(instance: ICInstanceData): void;
-    switchSave(id: number): void;
+    switchSave(id: number): Promise<void>;
     toggleDarkMode(): void;
     toggleSound(): void;
     updateCamera(camera: Camera): void;

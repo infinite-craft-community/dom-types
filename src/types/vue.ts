@@ -1,21 +1,45 @@
 import type { ICInstanceData, ICItemData } from "./common";
 import type { IC_DOM } from "./dom";
 
+interface _ComputedWatcher<T = unknown> {
+  getter(): T;
+  newDepIds: Set<unknown>;
+}
+
+interface IC_VUE_Sidebar_ComputedWatcher<
+  T = unknown,
+> extends _ComputedWatcher<T> {}
+
 export namespace IC_VUE {
-  interface CraftApiResponse {
+  export interface CraftApiResponse {
     discovery?: boolean;
     emoji?: string;
     text: string;
   }
 
-  interface Container {
+  export interface Camera {
+    x: number;
+    y: number;
+    zoom: number;
+  }
+
+  export interface Save {
+    camera?: Camera;
+    created: number;
+    id: number;
+    name: string;
+    updated: number;
+    version: string;
+  }
+
+  export interface Container {
     addAPI(): void;
     changeSaveName(id: number, name: string): void;
     checkIfMobile(): void;
     clearInstances(): void;
     craft(
       a: ICInstanceData,
-      b: ICInstanceData
+      b: ICInstanceData,
     ): Promise<{
       instance: ICItemData;
       isNew: boolean;
@@ -36,7 +60,7 @@ export namespace IC_VUE {
     switchSave(id: number): void;
     toggleDarkMode(): void;
     toggleSound(): void;
-    updateCamera(camera: IC_Container_VUE_Camera): void;
+    updateCamera(camera: Camera): void;
     updateInstances(instances: ICInstanceData[]): void;
     uploadHelper(id: number, data: ArrayBuffer): void;
     uploadSave(id: number, data: ArrayBuffer): void;
@@ -54,11 +78,7 @@ export namespace IC_VUE {
     isMuted: boolean;
     items: ICItemData[];
     loadingMessage: string;
-    saves: [
-      IC_Container_VUE_Save,
-      IC_Container_VUE_Save,
-      IC_Container_VUE_Save
-    ];
+    saves: [Save, Save, Save];
     showMenu: boolean;
     sidebarWidth: number;
 
@@ -75,11 +95,7 @@ export namespace IC_VUE {
       isMuted: boolean;
       items: ICItemData[];
       loadingMessage: string;
-      saves: [
-        IC_Container_VUE_Save,
-        IC_Container_VUE_Save,
-        IC_Container_VUE_Save
-      ];
+      saves: [Save, Save, Save];
       showMenu: boolean;
       sidebarWidth: number;
     };
@@ -90,7 +106,12 @@ export namespace IC_VUE {
     };
   }
 
-  interface Sidebar {
+  export interface Sidebar_Sort {
+    asc: boolean;
+    name: string;
+  }
+
+  export interface Sidebar {
     changeSort(sort: { asc: boolean; name: string }): void;
     changeSortDirection: unknown;
     checkControlsBlur: unknown;
@@ -126,16 +147,16 @@ export namespace IC_VUE {
     showHidden: boolean;
     showSortDropdown: boolean;
     sidebarWidth: number;
-    sortBy: IC_Sidebar_VUE_Sort;
-    sorts: IC_Sidebar_VUE_Sort[];
+    sortBy: Sidebar_Sort;
+    sorts: Sidebar_Sort[];
 
     _computedWatchers: {
-      briefText: IC_Sidebar_VUE_ComputedWatcher<boolean>;
-      filteredElements: IC_Sidebar_VUE_ComputedWatcher<ICItemData[]>;
-      filteredElementsCut: IC_Sidebar_VUE_ComputedWatcher<ICItemData[]>;
-      mobileItemRows: IC_Sidebar_VUE_ComputedWatcher<ICItemData[][]>;
-      searchResults: IC_Sidebar_VUE_ComputedWatcher<ICItemData[]>;
-      sortedElements: IC_Sidebar_VUE_ComputedWatcher<ICItemData[]>;
+      briefText: IC_VUE_Sidebar_ComputedWatcher<boolean>;
+      filteredElements: IC_VUE_Sidebar_ComputedWatcher<ICItemData[]>;
+      filteredElementsCut: IC_VUE_Sidebar_ComputedWatcher<ICItemData[]>;
+      mobileItemRows: IC_VUE_Sidebar_ComputedWatcher<ICItemData[][]>;
+      searchResults: IC_VUE_Sidebar_ComputedWatcher<ICItemData[]>;
+      sortedElements: IC_VUE_Sidebar_ComputedWatcher<ICItemData[]>;
     };
     _data: {
       isDeleting: boolean;
@@ -148,8 +169,8 @@ export namespace IC_VUE {
       showHidden: boolean;
       showSortDropdown: boolean;
       sidebarWidth: number;
-      sortBy: IC_Sidebar_VUE_Sort;
-      sorts: IC_Sidebar_VUE_Sort[];
+      sortBy: Sidebar_Sort;
+      sorts: Sidebar_Sort[];
     };
 
     $el: IC_DOM.SidebarDivElement;
@@ -162,34 +183,3 @@ export namespace IC_VUE {
     };
   }
 }
-
-interface IC_Container_VUE_Camera {
-  x: number;
-  y: number;
-  zoom: number;
-}
-
-interface IC_Container_VUE_Save {
-  camera?: IC_Container_VUE_Camera;
-  created: number;
-  id: number;
-  name: string;
-  updated: number;
-  version: string;
-}
-
-interface _ComputedWatcher<T = unknown> {
-  getter(): T;
-  newDepIds: Set<unknown>;
-}
-
-interface IC_Sidebar_VUE_Sort {
-  asc: boolean;
-  name: string;
-}
-
-interface IC_Sidebar_VUE_ComputedWatcher<T = unknown>
-  extends _ComputedWatcher<T> {}
-
-export interface IC_Container_VUE extends IC_VUE.Container {}
-export interface IC_Sidebar_VUE extends IC_VUE.Sidebar {}

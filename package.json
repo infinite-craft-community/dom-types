@@ -1,18 +1,10 @@
 {
   "name": "@infinite-craft/dom-types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript type declarations for the Infinite Craft DOM tree and client API",
+  "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
-  "types": "./src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts"
-    }
-  },
-  "scripts": {
-    "npm:publish": "bun publish --access public"
-  },
   "keywords": [
     "infinite",
     "craft",
@@ -23,7 +15,24 @@
     "types",
     "typescript"
   ],
-  "peerDependencies": {
-    "typescript": "^5.9.2"
+  "scripts": {
+    "build": "bunx --bun tsdown",
+    "npm:publish": "bun publish --access public"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "tsdown": "^0.18.0",
+    "typescript": "^5.9.3"
   }
 }

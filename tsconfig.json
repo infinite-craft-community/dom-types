@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    // Environment setup & latest features
-    "lib": ["ESNext", "DOM"],
+    "declaration": true,
+
     "target": "esnext",
-    "module": "preserve",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "moduleDetection": "force",
 
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
+    "rootDir": "./src",
 
-    // This is a type declarations package
-    "skipLibCheck": false,
-    "skipDefaultLibCheck": true,
+    "paths": { "~/*": ["./src/*"] },
+
+    "skipLibCheck": true,
 
     // Max strictness
     "strict": true,
@@ -27,5 +25,6 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": ["src/**/*"]
 }

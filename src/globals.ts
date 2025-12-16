@@ -3,7 +3,7 @@ import type {
   ICElementIdMap,
   ICElementSelectorAllMap,
   ICElementSelectorMap,
-} from "./types";
+} from "./types/dom";
 
 declare global {
   interface Element {

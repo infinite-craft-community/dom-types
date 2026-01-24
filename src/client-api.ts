@@ -31,7 +31,7 @@ export interface InfiniteCraftClientAPI {
       text: string;
       x: number;
       y: number;
-    }[]
+    }[],
   ): void;
   removeInstances(instances: ICInstanceData[]): void;
   updateInstances(instances: ICInstanceData[]): void;

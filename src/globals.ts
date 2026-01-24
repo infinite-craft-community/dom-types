@@ -1,54 +1,42 @@
 import type { InfiniteCraftClientAPI } from "./client-api";
-import type {
-  ICElementIdMap,
-  ICElementSelectorAllMap,
-  ICElementSelectorMap,
-} from "./types/dom";
+import type { ICElementIdMap, ICElementSelectorAllMap, ICElementSelectorMap } from "./types/dom";
 
 declare global {
   interface Element {
     matches<K extends keyof ICElementSelectorAllMap>(
-      selectors: K
+      selectors: K,
     ): this is ICElementSelectorAllMap[K];
   }
 
   interface ParentNode {
     querySelector<K extends keyof ICElementSelectorAllMap>(
-      selectors: K
+      selectors: K,
     ): ICElementSelectorAllMap[K] | null;
     querySelector<K extends keyof HTMLElementTagNameMap>(
-      selectors: K
+      selectors: K,
     ): HTMLElementTagNameMap[K] | null;
     querySelector<E extends Element = Element>(selectors: string): E | null;
 
     querySelectorAll<K extends keyof ICElementSelectorAllMap>(
-      selectors: K
+      selectors: K,
     ): NodeListOf<ICElementSelectorAllMap[K]>;
     querySelectorAll<K extends keyof HTMLElementTagNameMap>(
-      selectors: K
+      selectors: K,
     ): NodeListOf<HTMLElementTagNameMap[K]>;
-    querySelectorAll<E extends Element = Element>(
-      selectors: string
-    ): NodeListOf<E>;
+    querySelectorAll<E extends Element = Element>(selectors: string): NodeListOf<E>;
   }
 
   interface Document {
-    getElementById<K extends keyof ICElementIdMap>(
-      elementId: K
-    ): ICElementIdMap[K];
+    getElementById<K extends keyof ICElementIdMap>(elementId: K): ICElementIdMap[K];
     getElementById(elementId: string): HTMLElement | null;
 
-    querySelector<K extends keyof ICElementIdMap>(
-      selectors: `#${K}`
-    ): ICElementIdMap[K];
+    querySelector<K extends keyof ICElementIdMap>(selectors: `#${K}`): ICElementIdMap[K];
     querySelector<K extends keyof ICElementSelectorAllMap>(
-      selectors: K
+      selectors: K,
     ): ICElementSelectorAllMap[K] | null;
-    querySelector<K extends keyof ICElementSelectorMap>(
-      selectors: K
-    ): ICElementSelectorMap[K];
+    querySelector<K extends keyof ICElementSelectorMap>(selectors: K): ICElementSelectorMap[K];
     querySelector<K extends keyof HTMLElementTagNameMap>(
-      selectors: K
+      selectors: K,
     ): HTMLElementTagNameMap[K] | null;
     querySelector<E extends Element = Element>(selectors: string): E | null;
   }

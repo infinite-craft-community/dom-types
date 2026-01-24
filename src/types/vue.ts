@@ -6,9 +6,7 @@ interface _ComputedWatcher<T = unknown> {
   newDepIds: Set<unknown>;
 }
 
-interface IC_VUE_Sidebar_ComputedWatcher<
-  T = unknown,
-> extends _ComputedWatcher<T> {}
+interface IC_VUE_Sidebar_ComputedWatcher<T = unknown> extends _ComputedWatcher<T> {}
 
 export namespace IC_VUE {
   export interface CraftApiResponse {

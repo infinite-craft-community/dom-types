@@ -137,42 +137,28 @@ export namespace IC_DOM {
   }
 
   export interface SidebarDivElement extends Container.SidebarDivElement {}
-  export interface SideControlsDivElement
-    extends Container.SideControlsDivElement {}
-  export interface ParticlesCanvasElement
-    extends Container.ParticlesCanvasElement {}
+  export interface SideControlsDivElement extends Container.SideControlsDivElement {}
+  export interface ParticlesCanvasElement extends Container.ParticlesCanvasElement {}
   export interface SelectBoxDivElement extends Container.SelectBoxDivElement {}
-  export interface InstancesTopDivElement
-    extends Container.InstancesTopDivElement {}
+  export interface InstancesTopDivElement extends Container.InstancesTopDivElement {}
   export interface InstancesDivElement extends Container.InstancesDivElement {}
   export interface MenuDivElement extends Container.MenuDivElement {}
 
-  export interface ResizeHandleDivElement
-    extends Container.Sidebar.ResizeHandleDivElement {}
-  export interface SidebarOverlayDivElement
-    extends Container.Sidebar.SidebarOverlayDivElement {}
-  export interface SidebarInnerDivElement
-    extends Container.Sidebar.SidebarInnerDivElement {}
-  export interface SidebarItemsDivElement
-    extends Container.Sidebar.ItemsDivElement {}
-  export interface SidebarItemsInnerDivElement
-    extends Container.Sidebar.ItemsInnerDivElement {}
+  export interface ResizeHandleDivElement extends Container.Sidebar.ResizeHandleDivElement {}
+  export interface SidebarOverlayDivElement extends Container.Sidebar.SidebarOverlayDivElement {}
+  export interface SidebarInnerDivElement extends Container.Sidebar.SidebarInnerDivElement {}
+  export interface SidebarItemsDivElement extends Container.Sidebar.ItemsDivElement {}
+  export interface SidebarItemsInnerDivElement extends Container.Sidebar.ItemsInnerDivElement {}
   export interface SidebarItemsBottomSpacerDivElement
     extends Container.Sidebar.BottomSpacerDivElement {}
-  export interface SidebarControlsDivElement
-    extends Container.Sidebar.SidebarControlsDivElement {}
-  export interface SidebarSearchDivElement
-    extends Container.Sidebar.SidebarSearchDivElement {}
-  export interface SidebarInputInputElement
-    extends Container.Sidebar.SidebarInputInputElement {}
-  export interface SidebarSortingDivElement
-    extends Container.Sidebar.SidebarSortingDivElement {}
+  export interface SidebarControlsDivElement extends Container.Sidebar.SidebarControlsDivElement {}
+  export interface SidebarSearchDivElement extends Container.Sidebar.SidebarSearchDivElement {}
+  export interface SidebarInputInputElement extends Container.Sidebar.SidebarInputInputElement {}
+  export interface SidebarSortingDivElement extends Container.Sidebar.SidebarSortingDivElement {}
   export interface SidebarDiscoveriesDivElement
     extends Container.Sidebar.SidebarDiscoveriesDivElement {}
-  export interface SortWrapperDivElement
-    extends Container.Sidebar.SortWrapperDivElement {}
-  export interface SortDirectionDivElement
-    extends Container.Sidebar.SortDirectionDivElement {}
+  export interface SortWrapperDivElement extends Container.Sidebar.SortWrapperDivElement {}
+  export interface SortDirectionDivElement extends Container.Sidebar.SortDirectionDivElement {}
 
   export interface ItemWrapperDivElement extends HTMLDivElement {
     children: HTMLCollection & [ItemDivElement];
@@ -193,10 +179,8 @@ export namespace IC_DOM {
   }
 
   export interface InstanceDivElement extends HTMLDivElement {
-    children: HTMLCollection &
-      [InstanceEmojiSpanElement, InstanceTextSpanElement];
-    childNodes: NodeListOf<ChildNode> &
-      [InstanceEmojiSpanElement, InstanceTextSpanElement];
+    children: HTMLCollection & [InstanceEmojiSpanElement, InstanceTextSpanElement];
+    childNodes: NodeListOf<ChildNode> & [InstanceEmojiSpanElement, InstanceTextSpanElement];
   }
 
   export interface InstanceEmojiSpanElement extends HTMLSpanElement {

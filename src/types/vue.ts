@@ -2,8 +2,12 @@ import type { ICInstanceData, ICItemData } from "./common";
 import type { IC_DOM } from "./dom";
 
 interface _ComputedWatcher<T = unknown> {
+  value: T;
   getter(): T;
-  newDepIds: Set<unknown>;
+  newDepIds: Set<number>;
+  depIds: Set<number>;
+  dirty: boolean;
+  id: number;
 }
 
 interface IC_VUE_Sidebar_ComputedWatcher<T = unknown> extends _ComputedWatcher<T> {}

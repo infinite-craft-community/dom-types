@@ -1,6 +1,6 @@
 {
   "name": "@infinite-craft/dom-types",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "TypeScript type declarations for the Infinite Craft DOM tree and client API",
   "keywords": [
     "client",
@@ -32,8 +32,9 @@
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {
-    "oxfmt": "^0.42.0",
-    "tsdown": "^0.21.7",
-    "typescript": "^6.0.2"
+    "@gameroman/config": "^0.1.0",
+    "oxfmt": "^0.46.0",
+    "tsdown": "^0.21.10",
+    "typescript": "^6.0.3"
   }
 }

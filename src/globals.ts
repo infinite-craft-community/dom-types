@@ -6,6 +6,8 @@ declare global {
     matches<K extends keyof ICElementSelectorAllMap>(
       selectors: K,
     ): this is ICElementSelectorAllMap[K];
+    matches<K extends keyof HTMLElementTagNameMap>(selectors: K): this is HTMLElementTagNameMap[K];
+    matches(selectors: string): boolean;
   }
 
   interface ParentNode {

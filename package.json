@@ -38,8 +38,8 @@
     "typescript": "6.0.3"
   },
   "overrides": {
-    "@babel/generator": "8.0.0-rc.6",
-    "@babel/helper-validator-identifier": "8.0.0-rc.6",
-    "@babel/parser": "8.0.0-rc.6"
+    "@babel/generator": "8.0.0",
+    "@babel/helper-validator-identifier": "8.0.2",
+    "@babel/parser": "8.0.0"
   }
 }

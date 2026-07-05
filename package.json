@@ -36,10 +36,5 @@
     "oxfmt": "0.57.0",
     "tsdown": "0.22.3",
     "typescript": "6.0.3"
-  },
-  "overrides": {
-    "@babel/generator": "8.0.0-rc.6",
-    "@babel/helper-validator-identifier": "8.0.0-rc.6",
-    "@babel/parser": "8.0.0-rc.6"
   }
 }

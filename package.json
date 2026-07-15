@@ -32,8 +32,8 @@
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {
-    "@gameroman/config": "0.2.4",
-    "oxfmt": "0.58.0",
+    "@gameroman/config": "0.2.5",
+    "oxfmt": "0.59.0",
     "tsdown": "0.22.7",
     "typescript": "6.0.3"
   }
